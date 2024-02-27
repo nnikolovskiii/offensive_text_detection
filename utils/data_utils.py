@@ -99,7 +99,7 @@ def evaluate(model, device, data_loader, loss_fn):
           y_pred.extend(predicted_labels.cpu().numpy())
 
     accuracy = accuracy_score(y_true, y_pred)
-    precision = precision_score(y_true, y_pred)
+    precision = precision_score(y_true, y_pred, zero_division=1)
     recall = recall_score(y_true, y_pred)
     f1 = f1_score(y_true, y_pred)
 
